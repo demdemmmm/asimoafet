@@ -1,0 +1,2 @@
+# asimoafet
+Game jam etkinlik
