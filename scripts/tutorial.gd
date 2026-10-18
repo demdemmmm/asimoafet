@@ -11,7 +11,7 @@ const PICKUP_STEP := 4
 const STEPS := [
 	["HAREKET", "Karakteri WASD ya da ok tuşlarıyla (← ↑ → ↓) kontrol et ve yürü.", "WASD"],
 	["KOŞ", "Hareket ederken sol Shift'i basılı tutarak koş.", "SHIFT"],
-	["ÇÖMEL", "Çömelmek için C tuşuna bir kez bas.", "C"],
+	["ÇÖMEL", "Başına bir şey düşmesini önlemek için eşyaların yanında çömelmelisin. Bu adımı tamamlamak için C'ye bir kez bas.", "C"],
 	["ENVANTER", "F ile envanterini aç.", "F"],
 	["NESNE AL", "Telefon masasına git, matkabın yanında E'ye bas ve onu masadan al.", "E"],
 	["NESNE BIRAK", "F ile envanteri aç, eşyayı seç ve Q ile yere bırak.", "Q"],
@@ -83,7 +83,7 @@ func _process(delta: float) -> void:
 				_advance()
 		2:
 			# Eğitimde tek basış yeterli; eşya, konum veya basılı tutma şartı yok.
-			if p.crouching or Input.is_action_just_pressed("crouch"):
+			if Input.is_action_just_pressed("crouch"):
 				_advance()
 		3:
 			if world.inventory_ui.open:
