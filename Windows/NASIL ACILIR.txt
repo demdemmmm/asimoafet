@@ -1,0 +1,8 @@
+ASIMO AFET - ONE MORE TIME (Windows)
+
+1) Bu klasordeki "AsimoAfet.exe" dosyasina cift tikla; oyun acilir.
+   (AsimoAfet.exe ile AsimoAfet.pck ayni klasorde durmali.)
+2) "Windows bilgisayarinizi korudu" uyarisi cikarsa: "Ek bilgi" > "Yine de calistir".
+
+Kontroller: WASD ya da ok tuslari ile yuru, Shift kos, C comel/korun, E etkilesim, F envanter, Q birak.
+Diyaloglar E ya da farenin sol tikiyla ilerler.
