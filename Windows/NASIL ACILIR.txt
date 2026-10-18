@@ -1,8 +1,24 @@
-ASIMO AFET - ONE MORE TIME (Windows)
+ONE MORE TIME / ASIMO AFET — WINDOWS x64
 
-1) Bu klasordeki "AsimoAfet.exe" dosyasina cift tikla; oyun acilir.
-   (AsimoAfet.exe ile AsimoAfet.pck ayni klasorde durmali.)
-2) "Windows bilgisayarinizi korudu" uyarisi cikarsa: "Ek bilgi" > "Yine de calistir".
+1. Repoyu GitHub Desktop ile klonla ve indirmenin bitmesini bekle.
+2. Windows klasöründeki AsimoAfet.exe dosyasını çalıştır.
+3. AsimoAfet.pck dosyasını EXE ile aynı klasörde tut.
+4. Başlangıçta PLAY düğmesine tıkla veya Enter'a bas.
 
-Kontroller: WASD ya da ok tuslari ile yuru, Shift kos, C comel/korun, E etkilesim, F envanter, Q birak.
-Diyaloglar E ya da farenin sol tikiyla ilerler.
+Oynamak için Godot kurmak gerekmez. Bu EXE Windows x64 içindir.
+EXE yalnızca birkaç satırlık bir metinse Git LFS dosyası indirilmemiştir;
+repo klasöründe git lfs pull çalıştır.
+ZIP'teki dosyaları çalıştırmadan önce bir klasöre çıkar.
+
+KONTROLLER
+WASD / oklar: hareket. Sol Shift: koşma. C basılı: çömelme.
+Öğreticide çömelme adımını C'ye bir kez basarak tamamlayabilirsin.
+E / sol tık: etkileşim. F: envanteri aç veya kapat.
+Sol üst [F] etiketi: fareyle envanteri aç.
+1–5 / hızlı yuvalara tıklama: eşyayı ele al veya elinden bırak.
+Açık envanterde E / Enter / sol tık: al-bırak; Q / sağ tık: yere bırak.
+F / Esc / KAPAT / panel dışına tıklama: envanteri kapat.
+Matkap ve tüpte E veya sol tık basılı tutulabilir.
+Diyalog ve mini oyunlarda ekrandaki yönergeleri izle.
+
+Ayrıntılı bilgi: bu klasördeki README.md ve FARE_KONTROLLERI.txt.

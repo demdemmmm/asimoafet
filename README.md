@@ -1,89 +1,88 @@
 # One More Time
 
-## Projeyi geliştirmek
+**Aynı gece. Aynı felaket. Farklı kararlar.**
 
-Bu repo güncel Godot kaynaklarını, sahneleri, görselleri, sesi ve Windows oyun paketini içerir.
+One More Time (Asimo Afet), deprem temalı, zaman döngüsüne ve oyuncunun seçimlerine dayanan, çok sonlu bir 2D hikâye oyunudur. Her döngüde geçmişte yaşadıklarını hatırlayan bir adam, sevdiklerini kurtarmaya çalışır. Kimi kurtaracağın ve ne kadar hazırlıklı olduğun hikâyenin sonucunu değiştirir.
 
-1. Repoyu GitHub Desktop ile klonla. `Windows/AsimoAfet.exe` dosyası Git LFS ile tutulur.
-2. Godot **4.6.2** ile kök dizindeki `project.godot` dosyasını içe aktar/aç.
-3. Oyunu başlatmak için **F5** kullan; ana sahne `main.tscn` dosyasıdır.
+Bu repo oyunun Godot kaynak kodlarını, sahnelerini, görsel ve ses kaynaklarını, fragman araçlarını ve oynanabilir Windows paketini içerir.
 
-### Dosya düzeni
+## Windows'ta oynamak
+
+1. Repoyu **GitHub Desktop ile klonla** ve indirme işleminin tamamlanmasını bekle.
+2. Klonlanan reponun `Windows` klasörünü aç.
+3. `AsimoAfet.exe` dosyasını çalıştır. `AsimoAfet.pck` dosyası aynı klasörde kalmalıdır.
+4. Başlangıç ekranında **PLAY** düğmesine tıkla veya **Enter** tuşuna bas.
+
+Hazır oyun paketi **Windows x64** içindir; oynamak için Godot kurmak gerekmez. Ayrıntılar ve indirme sorunlarının çözümü: [Windows kullanım rehberi](Windows/README.md).
+
+## Godot'ta geliştirmek
+
+Geliştirme ve açılış kontrollerinde **Godot 4.6.2** kullanıldı.
+
+1. Repoyu klonla.
+2. Godot Project Manager'da **Import / İçe Aktar** ile kökteki `project.godot` dosyasını seç.
+3. Kaynakların içe aktarılmasını bekle ve **F5** ile projeyi başlat. Ana sahne `main.tscn` dosyasıdır.
+
+Kaynak projeyi düzenlemek için `Windows` paketini açman gerekmez. Mac ve Windows dışa aktarma ayarları `export_presets.cfg` içindedir; çalıştırılabilir paket üretmek için kullandığın Godot sürümüyle eşleşen export templates gerekir.
+
+## Kontroller
+
+| İşlem | Kontrol |
+| --- | --- |
+| Hareket | WASD veya ok tuşları |
+| Koşma | Hareket ederken sol Shift |
+| Çömelme | C'yi basılı tut; öğreticide C'ye tek basış yeterlidir |
+| Yakındaki nesneyle etkileşim | E veya sol tık |
+| Envanteri açma/kapatma | F; fareyle açmak için sol üstteki `[F]` etiketi |
+| Envanterde eşya seçme | Sol/sağ ok veya A/D; fareyle yuvaya tıkla |
+| Eşyayı ele alma/elinden bırakma | Açık envanterde E / Enter / sol tık; ayrıca 1–5 veya hızlı eşya yuvaları |
+| Eşyayı yere bırakma | Açık envanterde Q veya yuvaya sağ tık |
+| Bandaj kullanma | B, bandajın varsa ve canın eksikse |
+| Envanteri kapatma | F / Esc, KAPAT düğmesi veya panel dışına tıklama |
+| Yeniden başlatma | İlgili son ekranında R |
+
+Diyaloglar ve mini oyunlar kendi ekranlarında ek yönergeler gösterir. Matkap ve yangın tüpünde E yerine sol tık basılı tutulabilir. Enkazdaki sargı mini oyununda A ve D sırayla kullanılır. Hareket, koşma ve çömelme klavyeyle yapılır.
+
+## Dosya düzeni
 
 | Konum | İçerik |
 | --- | --- |
 | `project.godot` | Godot projesinin giriş dosyası |
-| `main.gd`, `main.tscn` | Ana oyun akışı ve sahnesi |
-| `player.gd`, `player.tscn` | Karakter ve hareket kontrolleri |
-| `interaction.gd`, `camerashake.gd` | Etkileşimler ve kamera sarsıntısı |
+| `main.gd`, `main.tscn` | Ana dünya ve oyun sahnesi |
+| `player.gd`, `player.tscn` | Oyuncu karakteri ve hareket kontrolleri |
+| `interaction.gd`, `camerashake.gd` | Etkileşim alanları ve kamera sarsıntısı |
 | `scripts/` | Hikâye, envanter, öğretici, deprem ve mini oyun kodları |
 | `scenes/` | Mobilya, eşya ve etkileşim sahneleri |
-| `assets/` | Oyunun PNG/SVG görselleri ve ses dosyaları |
+| `assets/` | Görseller, sprite sayfaları, dokular ve ses kaynakları |
 | `trailer/` | Fragman sahneleri, kodları ve kayıt araçları |
 | `export_presets.cfg` | Mac ve Windows dışa aktarma ayarları |
-| `Windows/` | Oynanabilir Windows x64 paketi ve kullanım talimatları |
+| `Windows/` | Oynanabilir Windows x64 paketi ve kullanım rehberi |
+| `FARE_KONTROLLERI.txt` | Fare kontrollerinin kısa açıklaması |
 
-### Windows'ta oynamak
+## Büyük dosyalar ve Git LFS
 
-`Windows` klasörünü indir/klonla ve `AsimoAfet.exe` dosyasını çalıştır.
-`AsimoAfet.pck` dosyası EXE ile aynı klasörde kalmalıdır.
-EXE indirirken Git LFS dosyasının tamamının indiğinden emin ol; küçük bir metin işaretçisi oyun değildir.
+`Windows/AsimoAfet.exe`, **Git LFS** ile takip edilir. Klonlama sonrasında EXE yerine yalnızca `version https://git-lfs.github.com/spec/v1` ile başlayan küçük bir metin dosyası varsa gerçek oyun dosyası henüz indirilmemiştir.
 
-Godot'un oluşturduğu `.godot/` önbelleği, çalışma günlükleri ve yerel yedek klasörleri Git'e eklenmez.
-`.uid` ve `.import` dosyaları ise kaynakların kimliklerini ve içe aktarma ayarlarını korumak için repoda tutulur.
+Komut satırını kullanıyorsan önce [Git LFS'yi kur](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage), ardından:
 
-## Oyun hakkında
+```sh
+git lfs install
+git clone https://github.com/demdemmmm/asimoafet.git
+cd asimoafet
+git lfs pull
+```
 
-Game jam etkinlik
+Repo zaten klonlandıysa repo klasöründe `git lfs pull` çalıştırman yeterlidir. GitHub'ın **Code → Download ZIP** arşivinde EXE yerine LFS işaretçisi bulunabilir; Windows paketi için yukarıdaki klonlama yöntemini kullan. [GitHub'ın arşiv ve LFS açıklaması](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-git-lfs-objects-in-archives-of-your-repository)
 
- Zaman, Seçim, Vicdan
-Aynı gece. Aynı felaket. Farklı kararlar.
-Büyük bir depremin ardından kendini tekrar tekrar aynı gecede bulan bir adam, her döngüde geçmişte yaşadıklarını hatırlayarak sevdiklerini kurtarmaya çalışır.
-Ancak zaman geri alınabilse de her kararın bir sonucu vardır. Kimi kurtaracağın, nelerden vazgeçeceğin ve ne kadar hazırlıklı olduğun tamamen senin seçimlerine bağlı.
-ASIMO AFET, zaman döngüsü, psikolojik gerilim ve afet bilincini birleştiren, oyuncunun vicdanını sorgulayan, çok sonlu bir 2D hikâye oyunudur.
-Peki sen, her şeyi yeniden yaşama şansın olsaydı neyi değiştirirdin?
+Godot'un ürettiği `.godot/` önbelleği, çalışma günlükleri ve yerel yedek klasörleri Git'e eklenmez. `.uid` ve `.import` dosyaları kaynak kimliklerini ve içe aktarma ayarlarını korumak için repoda tutulur.
 
+## Geliştirme notları
 
-ASIMO AFET, deprem bilinci oluşturmayı amaçlayan, zaman döngüsü ve oyuncu seçimlerine dayalı, çok sonlu bir 2D hikâye oyunudur. Oyunun geliştirme sürecinde ChatGPT (GPT Pro) ve Claude Pro yapay zekâ araçlarından destek alınmıştır.
-1. Hikâye ve Senaryo Geliştirme
-Oyunun ana fikri, zaman döngüsü, afet teması ve oyuncunun vicdani seçimleri geliştirici tarafından belirlenmiştir.
-Yapay zekâ şu alanlarda destek sağlamıştır:
-- Senaryo fikirlerinin geliştirilmesi ve olayların birbirine bağlanması.
-- Karakterler arasındaki diyalogların hazırlanması.
-- Farklı zaman döngülerine göre konuşmaların çeşitlendirilmesi.
-- Oyuncunun kararlarına bağlı alternatif hikâye akışlarının planlanması.
-- Sinematik sahnelerin ve final fikirlerinin geliştirilmesi.
-2. Programlama ve Oyun Mekanikleri
-Claude Pro, Godot oyun motorunda GDScript kodlarının geliştirilmesi ve düzenlenmesi amacıyla kullanılmıştır.
-Yapay zekâ desteği alınan başlıca sistemler:
-- Karakter hareketleri ve etkileşim mekanikleri.
-- Zaman döngüsü ve yeniden başlama sistemi.
-- Deprem animasyonları ve kamera sarsıntıları.
-- Envanter ve nesne toplama sistemi.
-- Elektrik ve dolap sabitleme mini oyunları.
-- Diyalog sistemi ve zamanlayıcılar.
-- Fener ve ortam aydınlatması.
-- Oyuncu seçimlerine bağlı olayların yönetilmesi.
-3. Görsel Tasarım ve Sahne Düzenleme
-Yapay zekâ, oyunun görsel tasarımını planlama ve mevcut görselleri sahnelere uyarlama süreçlerinde kullanılmıştır.
-Bu kapsamda:
-- Salon, mutfak, banyo ve yatak odalarının düzenlenmesi.
-- Mobilyaların konumlandırılması ve ölçeklendirilmesi.
-- Zemin ve duvar kaplamalarının uygulanması.
-- Görsel katmanların ve çarpışma alanlarının düzenlenmesi.
-- Işıklandırma ve atmosfer efektlerinin geliştirilmesi.
-Not: Oyunda kullanılan bütün görsellerin yapay zekâ tarafından üretildiği söylenemez. Hazır veya geliştirici tarafından sağlanan görseller de kullanılmıştır.
-4. Hata Ayıklama ve Optimizasyon
-Yapay zekâ araçlarından oyun geliştirme sırasında karşılaşılan teknik problemlerin çözümünde yararlanılmıştır.
-Örneğin:
-- Tam ekran ölçeklendirme sorunları.
-- Hatalı mobilya yerleşimleri.
-- Animasyon ve seslerin yanlış zamanda tetiklenmesi.
-- Olaylar arasındaki koşul çakışmaları.
-- Karakter etkileşimleri ve zaman döngüsü hataları.
-5. Fragman ve Tanıtım
-Oyunun tanıtım fragmanının geliştirilmesinde de yapay zekâ desteğinden yararlanılmıştır.
-- Fragmanın senaryosu ve sahne sıralaması planlanmıştır.
-- Godot içerisinde sinematik fragman mimarisi hazırlanması için Claude kullanılmıştır.
-- Kamera hareketleri, sahne geçişleri ve ses zamanlamaları üzerinde çalışılmıştır.
-- Oyunun zaman döngüsü, seçimler ve afet bilinci temalarını öne çıkaran tanıtım metinleri hazırlanmıştır.
+Geliştiricinin belirlediği oyun fikri, zaman döngüsü ve afet teması; hikâye, mekanikler ve sahne düzeniyle birlikte geliştirilmiştir. Süreçte **ChatGPT/Codex ve Claude** araçlarından destek alınmıştır:
+
+- Hikâye akışı, diyaloglar ve alternatif sonlar.
+- GDScript kodları, oyun mekanikleri ve hata ayıklama.
+- Sahne düzeni, ışıklandırma, görsel yerleşimi ve çarpışma alanları.
+- Fragman akışı, kamera hareketleri ve zamanlama.
+
+Görsellerin tamamı yapay zekâ üretimi değildir; hazır veya geliştirici tarafından sağlanan görseller de kullanılmıştır.

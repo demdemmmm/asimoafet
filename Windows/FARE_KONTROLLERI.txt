@@ -1,16 +1,21 @@
-FARE KONTROLLERİ — 18 Ekim 2026
+ONE MORE TIME — FARE KONTROLLERİ
 
-Klavye kontrolleri korunmuştur.
+Klavye kontrolleri de kullanılabilir.
+
 • Sol tık: yakındaki nesneyle E gibi etkileşime gir.
   Yakındaki birden fazla nesne varsa tıkladığın nesne seçilir.
   Menzil dışındaki nesneler uzaktan kullanılamaz.
-• Sol üst eşya yuvaları: tıklayarak eline al / elinden bırak.
+• Sol üst eşya yuvaları: tıklayarak eşyayı ele al / elinden bırak.
 • Sol üst [F] etiketi: tıklayarak envanteri aç.
-• Açık envanter: yuvaya sol tıkla al/bırak; sağ tıkla yere bırak.
-  KAPAT'a veya panel dışına tıklayarak kapat.
+• Açık envanterde yuvaya sol tık: ele al / elinden bırak.
+  Yuvaya sağ tık: yere bırak. Çanta yere bırakılamaz.
+• KAPAT düğmesi veya panel dışına tıklama: envanteri kapat.
 • Matkap: E yerine sol tık; vidayı sıkmak için sol tık basılı tut.
 • Yangın tüpü: pimi sol tıkla çek; püskürtmek için sol tık basılı tut.
-• Enkaz: çantadaki eşyayı doğrudan tıklayarak seç ve kullan.
-  Sürünme ve düdük E yerine sol tıkla da çalışır; düdükte basılı tutabilirsin.
-• Mevcut fareli diyalog ve kablo sürükleme kontrolleri korunmuştur.
-Hareket, koşma ve çömelme için mevcut klavye tuşlarını kullan.
+• Enkaz: çantadaki eşyayı tıklayarak seç ve kullan.
+  Sürünme ve düdükte E yerine sol tık kullanılabilir.
+• Kabloları fareyle sürükleyip bağla; diyaloglarda ekran yönergelerini izle.
+
+Hareket, koşma ve çömelme klavyeyle yapılır.
+Enkazdaki sargı mini oyununda A ve D sırayla kullanılır.
+Öğreticide çömelme görevini yalnızca C'ye bir kez basarak tamamla.
