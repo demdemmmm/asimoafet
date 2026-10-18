@@ -1,5 +1,39 @@
 # One More Time
 
+## Projeyi geliştirmek
+
+Bu repo güncel Godot kaynaklarını, sahneleri, görselleri, sesi ve Windows oyun paketini içerir.
+
+1. Repoyu GitHub Desktop ile klonla. `Windows/AsimoAfet.exe` dosyası Git LFS ile tutulur.
+2. Godot **4.6.2** ile kök dizindeki `project.godot` dosyasını içe aktar/aç.
+3. Oyunu başlatmak için **F5** kullan; ana sahne `main.tscn` dosyasıdır.
+
+### Dosya düzeni
+
+| Konum | İçerik |
+| --- | --- |
+| `project.godot` | Godot projesinin giriş dosyası |
+| `main.gd`, `main.tscn` | Ana oyun akışı ve sahnesi |
+| `player.gd`, `player.tscn` | Karakter ve hareket kontrolleri |
+| `interaction.gd`, `camerashake.gd` | Etkileşimler ve kamera sarsıntısı |
+| `scripts/` | Hikâye, envanter, öğretici, deprem ve mini oyun kodları |
+| `scenes/` | Mobilya, eşya ve etkileşim sahneleri |
+| `assets/` | Oyunun PNG/SVG görselleri ve ses dosyaları |
+| `trailer/` | Fragman sahneleri, kodları ve kayıt araçları |
+| `export_presets.cfg` | Mac ve Windows dışa aktarma ayarları |
+| `Windows/` | Oynanabilir Windows x64 paketi ve kullanım talimatları |
+
+### Windows'ta oynamak
+
+`Windows` klasörünü indir/klonla ve `AsimoAfet.exe` dosyasını çalıştır.
+`AsimoAfet.pck` dosyası EXE ile aynı klasörde kalmalıdır.
+EXE indirirken Git LFS dosyasının tamamının indiğinden emin ol; küçük bir metin işaretçisi oyun değildir.
+
+Godot'un oluşturduğu `.godot/` önbelleği, çalışma günlükleri ve yerel yedek klasörleri Git'e eklenmez.
+`.uid` ve `.import` dosyaları ise kaynakların kimliklerini ve içe aktarma ayarlarını korumak için repoda tutulur.
+
+## Oyun hakkında
+
 Game jam etkinlik
 
  Zaman, Seçim, Vicdan

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="sofa" instance=ExtResource("1")]
+kind = "sofa"
+caption = "Koltuk"
+size = Vector2(130, 80)
+solid = true
+collectible = false
+anchorable = false
+amount = 1
+foot_depth = 50.0
+
+texture_path = "res://assets/furniture/sofa.png"
+sprite_scale = 2.0

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="sink" instance=ExtResource("1")]
+kind = "sink"
+caption = "Lavabo"
+solid = true
+collectible = false
+anchorable = false
+foot_depth = 26.0
+texture_path = "res://assets/furniture/sink.png"

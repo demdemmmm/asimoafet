@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="electrical_box" instance=ExtResource("1")]
+kind = "electrical_box"
+caption = "Elektrik tesisat kutusu"
+size = Vector2(66, 50)
+solid = false
+collectible = false
+anchorable = false
+amount = 1
+
+texture_path = "res://assets/furniture/elektrik0.png"
+repaired_texture_path = "res://assets/furniture/elektrik1.png"
+sprite_scale = 2.0

@@ -1,0 +1,16 @@
+FARE KONTROLLERİ — 18 Ekim 2026
+
+Klavye kontrolleri korunmuştur.
+• Sol tık: yakındaki nesneyle E gibi etkileşime gir.
+  Yakındaki birden fazla nesne varsa tıkladığın nesne seçilir.
+  Menzil dışındaki nesneler uzaktan kullanılamaz.
+• Sol üst eşya yuvaları: tıklayarak eline al / elinden bırak.
+• Sol üst [F] etiketi: tıklayarak envanteri aç.
+• Açık envanter: yuvaya sol tıkla al/bırak; sağ tıkla yere bırak.
+  KAPAT'a veya panel dışına tıklayarak kapat.
+• Matkap: E yerine sol tık; vidayı sıkmak için sol tık basılı tut.
+• Yangın tüpü: pimi sol tıkla çek; püskürtmek için sol tık basılı tut.
+• Enkaz: çantadaki eşyayı doğrudan tıklayarak seç ve kullan.
+  Sürünme ve düdük E yerine sol tıkla da çalışır; düdükte basılı tutabilirsin.
+• Mevcut fareli diyalog ve kablo sürükleme kontrolleri korunmuştur.
+Hareket, koşma ve çömelme için mevcut klavye tuşlarını kullan.

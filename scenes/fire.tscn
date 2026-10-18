@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="fire" instance=ExtResource("1")]
+kind = "fire"
+caption = "Yangın"
+size = Vector2(56, 74)
+solid = false
+collectible = false
+anchorable = false
+amount = 1

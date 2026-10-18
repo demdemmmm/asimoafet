@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="fridge" instance=ExtResource("1")]
+kind = "fridge"
+caption = "Buzdolabı"
+size = Vector2(50, 100)
+solid = true
+collectible = false
+anchorable = true
+amount = 1
+texture_path = "res://assets/furniture/fridge.png"

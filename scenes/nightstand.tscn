@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="nightstand" instance=ExtResource("1")]
+kind = "nightstand"
+caption = "Komodin"
+size = Vector2(35, 40)
+solid = true
+collectible = false
+anchorable = false
+amount = 1
+
+texture_path = "res://assets/bedroom/nightstand.png"
+sprite_scale = 2.0

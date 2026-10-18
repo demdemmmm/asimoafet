@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="nails" instance=ExtResource("1")]
+kind = "nails"
+caption = "Çivi"
+size = Vector2(24, 18)
+solid = false
+collectible = true
+anchorable = false
+amount = 4

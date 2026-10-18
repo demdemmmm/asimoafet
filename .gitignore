@@ -1,0 +1,13 @@
+# Godot import cache and generated Android build.
+.godot/
+/android/
+
+# Local logs, OS metadata and intermediate exports.
+*.log
+.DS_Store
+/trailer/export/*
+!/trailer/export/.gdignore
+
+# Local snapshots are kept outside the versioned game source.
+/backup_*/
+/checkpoint_*/

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="kitchen_counter" instance=ExtResource("1")]
+kind = "kitchen_counter"
+caption = "L mutfak tezgâhı"
+size = Vector2(174, 150)
+solid = true
+collectible = false
+anchorable = false
+amount = 1

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="chair" instance=ExtResource("1")]
+kind = "chair"
+caption = "Sandalye"
+size = Vector2(32, 50)
+solid = true
+collectible = false
+anchorable = false
+amount = 1
+texture_path = "res://assets/furniture/chair.png"
+foot_depth = 22.0

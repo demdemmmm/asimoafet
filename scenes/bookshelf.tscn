@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="bookshelf" instance=ExtResource("1")]
+kind = "decor"
+caption = "Kitaplık"
+size = Vector2(54, 88)
+solid = true
+interaction_enabled = false
+collectible = false
+anchorable = false
+amount = 1
+foot_depth = 26.0
+style = "bookshelf"
+broken_texture_path = "res://assets/furniture/bookshelf_broken.png"
+texture_path = "res://assets/furniture/bookshelf.png"
+sprite_scale = 2.0

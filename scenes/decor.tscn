@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="decor" instance=ExtResource("1")]
+kind = "decor"
+caption = "Süs"
+size = Vector2(40, 40)
+solid = false
+interaction_enabled = false
+collectible = false
+anchorable = false
+amount = 1
+foot_depth = 16.0

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="fire_extinguisher" instance=ExtResource("1")]
+kind = "fire_extinguisher"
+caption = "Yangın tüpü"
+solid = false
+collectible = false
+anchorable = false
+amount = 1
+texture_path = "res://assets/furniture/extinguisher_pin.png"
+sprite_scale = 0.5

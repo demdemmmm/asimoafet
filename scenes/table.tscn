@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="table" instance=ExtResource("1")]
+kind = "table"
+caption = "Masa"
+size = Vector2(100, 60)
+solid = true
+collectible = false
+anchorable = false
+amount = 1
+foot_depth = 40.0
+texture_path = "res://assets/furniture/table.png"

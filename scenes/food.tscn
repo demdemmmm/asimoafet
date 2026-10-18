@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="food" instance=ExtResource("1")]
+kind = "food"
+caption = "Konserve"
+size = Vector2(14, 18)
+solid = false
+interaction_enabled = true
+collectible = true
+anchorable = false
+amount = 1
+foot_depth = 10.0

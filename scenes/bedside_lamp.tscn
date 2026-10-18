@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="bedside_lamp" instance=ExtResource("1")]
+kind = "floor_lamp"
+caption = "Başucu lambası"
+solid = false
+texture_path = "res://assets/bedroom/bedside_lamp.png"
+sprite_scale = 1.5
+draw_offset = Vector2(0, -42)
+lamp_radius_scale = 0.72
+lamp_energy = 0.85

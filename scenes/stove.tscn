@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="stove" instance=ExtResource("1")]
+kind = "stove"
+caption = "Ocak"
+size = Vector2(64, 62)
+solid = true
+interaction_enabled = false
+collectible = false
+anchorable = false
+amount = 1
+foot_depth = 34.0

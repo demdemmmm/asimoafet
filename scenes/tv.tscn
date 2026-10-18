@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="tv" instance=ExtResource("1")]
+kind = "tv"
+caption = "TV / alarm"
+size = Vector2(104, 62)
+solid = true
+collectible = false
+anchorable = false
+amount = 1

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="wardrobe" instance=ExtResource("1")]
+kind = "wardrobe"
+caption = "Dolap"
+size = Vector2(90, 130)
+solid = true
+collectible = false
+anchorable = false
+amount = 1
+
+texture_path = "res://assets/bedroom/wardrobe_closed.png"
+open_texture_path = "res://assets/bedroom/wardrobe_open.png"
+sprite_scale = 2.0

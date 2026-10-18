@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="cat" instance=ExtResource("1")]
+kind = "cat"
+caption = "Kedi"
+size = Vector2(40, 28)
+solid = false
+collectible = true
+anchorable = false
+amount = 1

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="flashlight" instance=ExtResource("1")]
+kind = "flashlight"
+caption = "Kafa lambası"
+size = Vector2(26, 14)
+solid = false
+collectible = true
+anchorable = false
+amount = 1

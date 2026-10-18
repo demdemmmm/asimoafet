@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="1"]
+
+[node name="shower_curtain" instance=ExtResource("1")]
+kind = "shower_curtain"
+caption = "Duş perdesi"
+solid = false
+interaction_enabled = false
+texture_path = "res://assets/banyo/shower_curtain.png"
+sprite_scale = 2.8
+foot_depth = 30.0
