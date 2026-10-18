@@ -1437,6 +1437,10 @@ func _update_rescue(delta: float) -> void:
 
 func _on_cat_taken() -> void:
 	game.player.carry_cat = true
+	# Deprem başladıysa Osman'ı kurtarmayı seçmek ön kapıyı kapatır (deprem yatak odasındayken
+	# başladıysa salon→yatak odası geçişi olmaz; kapı burada kapanır).
+	if quake_begun and not front_blocked and not left_house and not game.finished:
+		_block_front_door()
 	if not fire_trap and not has_tool:
 		_check_fire_trap()
 	if fire_trap:
@@ -2152,7 +2156,7 @@ func to_screen(world_point: Vector2) -> Vector2:
 
 
 # Osman oyuncunun peşinden gelir: uzaklaştıkça koşar, yetişince yürür, durunca oturur (8 yön).
-class OsmanFollower extends Node2D:
+class OsmanFollower extends CharacterBody2D:
 	const CatSprite = preload("res://scripts/cat_sprite.gd")
 	var story: Node
 	var game: Node2D
@@ -2163,11 +2167,23 @@ class OsmanFollower extends Node2D:
 	var moving := false
 	var running := false
 
-	func _process(delta: float) -> void:
+	func _ready() -> void:
+		motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+		collision_layer = 0
+		# Bu takipçi yalnız büyük kapı kayasının özel katmanına çarpar.
+		collision_mask = 4
+		var shape := CircleShape2D.new()
+		shape.radius = 9.0
+		var collider := CollisionShape2D.new()
+		collider.shape = shape
+		add_child(collider)
+
+	func _physics_process(delta: float) -> void:
 		t += delta
 		var p: Node2D = game.player
 		visible = not game.finished and p.carry_cat
 		if not visible:
+			velocity = Vector2.ZERO
 			return
 		if room != game.current_room:
 			room = game.current_room
@@ -2180,10 +2196,12 @@ class OsmanFollower extends Node2D:
 		if moving:
 			var speed := clampf(d * 5.0, 70.0, 460.0)
 			running = speed > 170.0
-			global_position += to.normalized() * minf(speed * delta, d)
+			velocity = to.normalized() * minf(speed, d / maxf(delta, 0.001))
+			move_and_slide()
 			facing = to.normalized()
 			idle_t = 0.0
 		else:
+			velocity = Vector2.ZERO
 			running = false
 			idle_t += delta
 		queue_redraw()
@@ -2258,6 +2276,10 @@ func _aftershock_debris() -> void:
 # kapının önünde taş ve kalaslardan bir yığın vardır.
 func _block_front_door() -> void:
 	front_blocked = true
+	# Kapı etkileşimi tamamen kalkar: tetikleyici oyun alanının dışına alınır (ipucu da görünmez).
+	var door: Node2D = game.get_node_or_null("Triggers/ExitDoor")
+	if door != null:
+		door.position = Vector2(-100000, -100000)
 	game.camera.shake(1.4, 14.0)
 	crash_player.pitch_scale = 0.7
 	crash_player.volume_db = 0.0
@@ -2289,6 +2311,29 @@ class FallenSlab extends Node2D:
 	const CORE := Color("a89a80")
 	const EDGE := Color("3a2a1c")
 
+	# Çizim ve çarpışma aynı kaya silüetinden türetilir; alt beton kalınlığı da katıdır.
+	const OUTLINE := [Vector2(-54, 0), Vector2(-58, -34), Vector2(-44, -70), Vector2(-6, -84),
+		Vector2(30, -78), Vector2(56, -60), Vector2(62, -26), Vector2(52, 0)]
+	const ROCK_ANGLE := -0.06
+
+	func _ready() -> void:
+		var body := StaticBody2D.new()
+		body.name = "RockBody"
+		# 1: oyuncu/duvar; 4: Osman'ın yalnız kayayı algılayan çarpışması.
+		body.collision_layer = 1 | 4
+		body.collision_mask = 0
+		var points := PackedVector2Array()
+		for point: Vector2 in OUTLINE:
+			points.append(point.rotated(ROCK_ANGLE))
+			points.append((point + Vector2(0, 9)).rotated(ROCK_ANGLE))
+		var hull := Geometry2D.convex_hull(points)
+		var padded := Geometry2D.offset_polygon(hull, 8.0)
+		var collider := CollisionPolygon2D.new()
+		collider.name = "RockOutline"
+		collider.polygon = padded[0] if not padded.is_empty() else hull
+		body.add_child(collider)
+		add_child(body)
+
 	func _process(_delta: float) -> void:
 		visible = game == null or game.current_room == room
 
@@ -2296,9 +2341,8 @@ class FallenSlab extends Node2D:
 		# Zemin gölgesi.
 		draw_set_transform(Vector2(0, 2), 0.0, Vector2(1.0, 0.28))
 		draw_circle(Vector2.ZERO, 70.0, Color(0, 0, 0, 0.3))
-		draw_set_transform(Vector2.ZERO, -0.06)
-		var slab := PackedVector2Array([Vector2(-54, 0), Vector2(-58, -34), Vector2(-44, -70), Vector2(-6, -84),
-			Vector2(30, -78), Vector2(56, -60), Vector2(62, -26), Vector2(52, 0)])
+		draw_set_transform(Vector2.ZERO, ROCK_ANGLE)
+		var slab := PackedVector2Array(OUTLINE)
 		# Kalınlık: alt kenarda koyu beton yüz.
 		var side := PackedVector2Array()
 		for p in slab:
